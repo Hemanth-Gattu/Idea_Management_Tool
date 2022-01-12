@@ -2,9 +2,6 @@
 
 View website here: http://ideatoolmanagement.pythonanywhere.com/
 
-### Purpose
-
-Simplify the workflow of updating all the production house related things without much knowledge on how to code. And also provide certain utility features.
 
 ### Installation:
 
@@ -12,15 +9,14 @@ Requirements:
 
 - Python 3 runtime
 - Django==3.2.6
--django-crispy-forms==1.12.0
+- django-crispy-forms==1.12.0
 
 - Other dependencies in `requirements_personal.txt`
 
 Procedure:
 
 
-
-Then follow these steps:
+Follow these steps:
 
 ```
 git clone https://github.com/Hemanth-Gattu/Production_House_Management.git
