@@ -20,7 +20,7 @@ def home(request):
     if 'q' in request.GET:
         q = request.GET['q']
         # data = Data.objects.filter(last_name__icontains=q)
-        multiple_q = Q(Q(title__icontains=q) | Q(content__icontains=q))
+        multiple_q = Q(Q(title__icontains=q) | Q(content__icontains=q) | Q(bucket__icontains=q))
         tasks = Task.objects.filter(multiple_q)
     else:
         tasks = Task.objects.all()

@@ -22,21 +22,21 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="./dist/stackedCards.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
-<script src="./dist/stackedCards.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+    <script src="./dist/stackedCards.min.js"></script>
     <title>Idea Management Tool</title>
 
-<style>
+    <style>
+        .banner-image {
+            background-color: #b5dfdf;
+            background-image: url("https://wallpaperaccess.com/full/2095724.png");
+            background-image: url("https://live.staticflickr.com/5797/20815728064_67147c301e_b.jpg");
+        }
 
-.banner-image {
-    background-color:#b5dfdf;
-    background-image: url( "https://wallpaperaccess.com/full/2095724.png");
-    background-image: url("https://live.staticflickr.com/5797/20815728064_67147c301e_b.jpg");
-  }
-  .vh-100 {
-    height: 500px!important;
-    padding-top: 0%;
-}
+        .vh-100 {
+            height: 500px !important;
+            padding-top: 0%;
+        }
 
         .text-white {
             color: #000808 !important;
@@ -66,103 +66,136 @@
         }
 
 
-/*1st choice */
-body{margin-top:20px;
-}
+        /*1st choice */
+        body {
+            margin-top: 20px;
+        }
 
-.card-big-shadow {
-    max-width: 320px;
-    position: relative;
-}
+        .card-big-shadow {
+            max-width: 320px;
+            position: relative;
+        }
 
-.coloured-cards .card {
-    margin-top: 30px;
-}
+        .coloured-cards .card {
+            margin-top: 30px;
+        }
 
-.card[data-radius="none"] {
-    border-radius: 0px;
-}
-.card {
-    border-radius: 8px;
-    box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
-    background-color: #FFFFFF;
-    color: #252422;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 1;
-}
+        .card[data-radius="none"] {
+            border-radius: 0px;
+        }
+
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+            background-color: #FFFFFF;
+            color: #252422;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
 
 
-.card[data-background="image"] .title, .card[data-background="image"] .stats, .card[data-background="image"] .category, .card[data-background="image"] .description, .card[data-background="image"] .content, .card[data-background="image"] .card-footer, .card[data-background="image"] small, .card[data-background="image"] .content a, .card[data-background="color"] .title, .card[data-background="color"] .stats, .card[data-background="color"] .category, .card[data-background="color"] .description, .card[data-background="color"] .content, .card[data-background="color"] .card-footer, .card[data-background="color"] small, .card[data-background="color"] .content a {
-    color: #FFFFFF;
-}
-.card.card-just-text .content {
-    padding: 50px 65px;
-    text-align: center;
-}
-.card .content {
-    padding: 20px 20px 10px 20px;
-}
-.card[data-color="blue"] .category {
-    color: #7a9e9f;
-}
+        .card[data-background="image"] .title,
+        .card[data-background="image"] .stats,
+        .card[data-background="image"] .category,
+        .card[data-background="image"] .description,
+        .card[data-background="image"] .content,
+        .card[data-background="image"] .card-footer,
+        .card[data-background="image"] small,
+        .card[data-background="image"] .content a,
+        .card[data-background="color"] .title,
+        .card[data-background="color"] .stats,
+        .card[data-background="color"] .category,
+        .card[data-background="color"] .description,
+        .card[data-background="color"] .content,
+        .card[data-background="color"] .card-footer,
+        .card[data-background="color"] small,
+        .card[data-background="color"] .content a {
+            color: #FFFFFF;
+        }
 
-.card .category, .card .label {
-    font-size: 14px;
-    margin-bottom: 0px;
-}
-.card-big-shadow:before {
-    background-image: url("http://static.tumblr.com/i21wc39/coTmrkw40/shadow.png");
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    bottom: -12%;
-    content: "";
-    display: block;
-    left: -12%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 0;
-}
-h4, .h4 {
-    font-size: 1.5em;
-    font-weight: 600;
-    line-height: 1.2em;
-}
-h6, .h6 {
-    font-size: 0.9em;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-.card .description {
-    font-size: 16px;
-    color: #66615b;
-}
-.content-card{
-    margin-top:30px;    
-}
-a:hover, a:focus {
-    text-decoration: none;
-}
+        .card.card-just-text .content {
+            padding: 50px 65px;
+            text-align: center;
+        }
 
-/*======== COLORS ===========*/
-.card[data-color="blue"] {
-    background: #b8d8d8;
-}
-.card[data-color="blue"] .description {
-    color: #506568;
-}
-.card[data-color="green"] {
-    background: #d5e5a3;
-}
-.card[data-color="green"] .description {
-    color: #60773d;
-}
-.card[data-color="green"] .category {
-    color: #92ac56;
-}
+        .card .content {
+            padding: 20px 20px 10px 20px;
+        }
 
+        .card[data-color="blue"] .category {
+            color: #7a9e9f;
+        }
+
+        .card .category,
+        .card .label {
+            font-size: 14px;
+            margin-bottom: 0px;
+        }
+
+        .card-big-shadow:before {
+            background-image: url("http://static.tumblr.com/i21wc39/coTmrkw40/shadow.png");
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            bottom: -12%;
+            content: "";
+            display: block;
+            left: -12%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 0;
+        }
+
+        h4,
+        .h4 {
+            font-size: 1.5em;
+            font-weight: 600;
+            line-height: 1.2em;
+        }
+
+        h6,
+        .h6 {
+            font-size: 0.9em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .card .description {
+            font-size: 16px;
+            color: #66615b;
+        }
+
+        .content-card {
+            margin-top: 30px;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: none;
+        }
+
+        /*======== COLORS ===========*/
+        .card[data-color="blue"] {
+            background: #b8d8d8;
+        }
+
+        .card[data-color="blue"] .description {
+            color: #506568;
+        }
+
+        .card[data-color="green"] {
+            background: #d5e5a3;
+        }
+
+        .card[data-color="green"] .description {
+            color: #60773d;
+        }
+
+        .card[data-color="green"] .category {
+            color: #92ac56;
+        }
     </style>
 </head>
 
@@ -208,73 +241,127 @@ a:hover, a:focus {
             </div>
         </nav>
     </div>
-    
+
     <br>
- 
-<br>
-<br>
-<br>
-<div style="padding-left:65px;padding-right: 65px;">
 
-<div class="w3-card-4" >
-<br>
-<br>
-    <div class="container h-100">
+    <br>
+    <br>
+    <br>
+    <div style="padding-left:65px;padding-right: 65px;">
 
-        <section id="upload-section">
-            <form method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <br>
-                <center><button type="submit" class="w3-button w3-black w3-round-xlarge">Add Note</button></center>
-                <br>
-            </form>
+        <div class="w3-card-4">
+            <br>
+            <br>
+            <div class="container h-100">
 
-        </section>
-    </div>
-</div>
-</div>
-<br>
-<br>
-   <div class="container bootstrap snippets bootdeys">
-    <div class="row">
-        {% for task in tasks %}
+                <section id="upload-section">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <br>
+                        <center><button type="submit" class="w3-button w3-black w3-round-xlarge">Add Note</button>
+                        </center>
+                        <br>
+                    </form>
 
-        <div class="col-md-4 col-sm-6 content-card">
-            <div class="card-big-shadow">
-                <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
-                    <div class="content">
-                        <h4 class="title"><a href="#">{{ task.title }}</a></h4>
-                        <p class="description">{{ task.content }}</p>
-                        <a class="btn btn-sm btn-info" href="{% url 'update_task' task.id %}">Update</a>
-                        <a class="btn btn-sm btn-danger" href="{% url 'delete' task.id %}">Delete</a> 
-                    </div>
-                </div> 
+                </section>
             </div>
         </div>
-        {% endfor %}
-
     </div>
-</div>
+    <br>
+    <br>
 
-    <section id="contact-section" style="width: 100%;">
+    <div class="container bootstrap snippets bootdeys">
+
+        <h4>Sort according to buckets..!</h4>
+        <br>
+        <form class="d-flex">
+
+            {% for task in tasks %}
+            {% if task.bucket != NULL %}
+            <!--  <input name="q" type="radio" value="{{ task.bucket }}"/>{{ task.bucket }}-->
+            <button class="w3-button w3-black w3-round-xlarge" name="q" type="submit" value="{{ task.bucket }}">{{
+                task.bucket }}</button>
+
+            {% endif %}
+            {% endfor %}
+
+            <!--<input value="search" type="submit"/> -->
+        </form>
+    </div>
+    <br>
+
+    <section id="note-section">
+        <div class="container bootstrap snippets bootdeys">
+            <div class="row">
+                {% for task in tasks %}
+                {% if task.bucket != NULL %}
+
+                <div class="col-md-4 col-sm-6 content-card">
+                    <div class="card-big-shadow">
+                        <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
+                            <div class="content">
+                                {% if task.bucket != NULL %}
+                                <!-- <a class="btn btn-sm btn-dark" >{{ task.bucket }}</a>-->
+                                <form class="d-flex">
+                                    <button class="btn btn-sm btn-dark" name="q" type="submit"
+                                        value="{{ task.bucket }}">{{ task.bucket }}</button>
+                                </form>
+                                {% endif %}
+                                <h4 class="title"><a href="#note-section">{{ task.title }}</a></h4>
+                                <p class="description">{{ task.content }}</p>
+                                <a class="btn btn-sm btn-info" href="{% url 'update_task' task.id %}">Update</a>
+                                <a class="btn btn-sm btn-danger" href="{% url 'delete' task.id %}">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+
+                {% for task in tasks %}
+                {% if task.bucket == NULL %}
+
+                <div class="col-md-4 col-sm-6 content-card">
+                    <div class="card-big-shadow">
+                        <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
+                            <div class="content">
+                                {% if task.bucket != NULL %}
+                                <a class="btn btn-sm btn-dark">{{ task.bucket }}</a>
+                                {% endif %}
+                                <h4 class="title"><a href="#">{{ task.title }}</a></h4>
+                                <p class="description">{{ task.content }}</p>
+                                <a class="btn btn-sm btn-info" href="{% url 'update_task' task.id %}">Update</a>
+                                <a class="btn btn-sm btn-danger" href="{% url 'delete' task.id %}">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+    <section id="contact-section" style="width: 100%; padding-top: 35px;">
         <div class="contact">
             <h class="contacttext contactus"><strong>Contact Me</strong></h4>
-            <p class="contacttext">Email : hemanth.3@iitj.ac.in</p>
-            <p class="contacttext">Contact Number : +919352060280</p>
-            <p class="contacttext">IIT Jodhpur</p>
-            <!--<p> "If you have any suggestions or requirements you are always invited to contact us by email or whatsapp and we will
+                <br>
+                <p class="contacttext">Email : hemanth.3@iitj.ac.in</p>
+                <p class="contacttext">Contact Number : +919352060280</p>
+                <p class="contacttext">IIT Jodhpur</p>
+                <!--<p> "If you have any suggestions or requirements you are always invited to contact us by email or whatsapp and we will
        be sure to get back to you as soon as possible"</p>-->
 
 
-            <a href="https://github.com/Hemanth-Gattu"><i class="fa fa-github"
-                    style="font-size:36px; color:rgb(248, 247, 247)"></i></a>
-            <a href="https://www.linkedin.com/in/hemanth-gattu-112373196/"><i class="fa fa-linkedin-square"
-                    style="font-size:36px;color:white;padding-left:25px;"></i>
-            </a>
-            <a href="https://www.instagram.com/hemanth_gattu/"><i class="fa fa-instagram"
-                    style="font-size:36px;color:white;padding-left:25px;"></i>
-            </a>
+                <a href="https://github.com/Hemanth-Gattu"><i class="fa fa-github"
+                        style="font-size:36px; color:rgb(248, 247, 247)"></i></a>
+                <a href="https://www.linkedin.com/in/hemanth-gattu-112373196/"><i class="fa fa-linkedin-square"
+                        style="font-size:36px;color:white;padding-left:25px;"></i>
+                </a>
+                <a href="https://www.instagram.com/hemanth_gattu/"><i class="fa fa-instagram"
+                        style="font-size:36px;color:white;padding-left:25px;"></i>
+                </a>
 
     </section>
     <script src="{% static 'bootstrap.bundle.min.js' %}"></script>
