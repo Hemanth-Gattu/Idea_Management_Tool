@@ -27,6 +27,10 @@
     <title>Idea Management Tool</title>
 
     <style>
+        body {
+            background-color: rgb(208, 231, 231);
+        }
+
         .banner-image {
             background-color: #b5dfdf;
             background-image: url("https://wallpaperaccess.com/full/2095724.png");
@@ -202,6 +206,8 @@
 
 <body>
     {% load crispy_forms_tags %}
+
+    <!--Nav Barr-->
     <div>
         <nav class="navbar fixed-top navbar-expand-lg navbar-light p-md-3" style="padding: 0%;">
             <div class="container">
@@ -218,7 +224,7 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#upload-section" style="padding-left: 25px;">Add
+                            <a class="nav-link text-white" href="{% url 'home' %}" style="padding-left: 25px;">Add
                                 Note</a>
                         </li>
 
@@ -243,18 +249,21 @@
     </div>
 
     <br>
-
     <br>
     <br>
     <br>
-    <div style="padding-left:65px;padding-right: 65px;">
 
-        <div class="w3-card-4">
-            <br>
-            <br>
-            <div class="container h-100">
+    <!--Adding Section-->
 
-                <section id="upload-section">
+        <div style="padding-left:65px;padding-right: 65px;">
+            <section id="upload-section">
+
+            <div class="w3-card-4"
+                style="width: 35rem; background-color: rgb(246, 249, 250);background-color:rgb(229, 236, 236);">
+                <br>
+                <br>
+                <div class="container h-100">
+
                     <form method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ form|crispy }}
@@ -264,33 +273,43 @@
                         <br>
                     </form>
 
-                </section>
+                </div>
+            </div>
+        </section>
+
+        </div>
+
+    <br>
+    <br>
+
+    <!-- Sorting Section-->
+
+    <div style="padding-left:65px;padding-right: 65px;">
+
+        <div class="w3-card-4" style="width: 50rem;">
+
+            <div class="container bootstrap snippets bootdeys" style="padding-top: 17px;padding-bottom: 20px;">
+
+                <h4>Sort according to buckets..!</h4>
+                <br>
+                <form class="d-flex">
+
+                    {% for task in tasks %}
+                    {% if task.bucket != NULL %}
+                    <!--  <input name="q" type="radio" value="{{ task.bucket }}"/>{{ task.bucket }}-->
+                    <button class="w3-button w3-black w3-round-xlarge" name="q" type="submit" value="{{ task.bucket }}">
+                        {{ task.bucket }}</button>
+
+                    {% endif %}
+                    {% endfor %}
+
+                    <!--<input value="search" type="submit"/> -->
+                </form>
             </div>
         </div>
     </div>
     <br>
-    <br>
-
-    <div class="container bootstrap snippets bootdeys">
-
-        <h4>Sort according to buckets..!</h4>
-        <br>
-        <form class="d-flex">
-
-            {% for task in tasks %}
-            {% if task.bucket != NULL %}
-            <!--  <input name="q" type="radio" value="{{ task.bucket }}"/>{{ task.bucket }}-->
-            <button class="w3-button w3-black w3-round-xlarge" name="q" type="submit" value="{{ task.bucket }}">{{
-                task.bucket }}</button>
-
-            {% endif %}
-            {% endfor %}
-
-            <!--<input value="search" type="submit"/> -->
-        </form>
-    </div>
-    <br>
-
+    <!-- Notes Section -->
     <section id="note-section">
         <div class="container bootstrap snippets bootdeys">
             <div class="row">
@@ -343,6 +362,8 @@
             </div>
         </div>
     </section>
+
+    <!-- Contact Section -->
     <section id="contact-section" style="width: 100%; padding-top: 35px;">
         <div class="contact">
             <h class="contacttext contactus"><strong>Contact Me</strong></h4>
