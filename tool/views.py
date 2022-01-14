@@ -1,7 +1,9 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from .models import *
 from .forms import *
 from django.db.models import Q
+from django.contrib import messages
+
 
 # Create your views here.
 
@@ -24,7 +26,7 @@ def home(request):
         tasks = Task.objects.filter(multiple_q)
     else:
         tasks = Task.objects.all()
-
+    
     context = {'tasks':tasks, 'form':form}
     return render(request, 'tool/home.html', context) 
     
@@ -44,12 +46,7 @@ def updateTask(request, pk):
 
 	return render(request, 'tool/update_task.html', context)
 
-def deleteTask(request, pk):
-	item = Task.objects.get(id=pk)
-
-	if request.method == 'POST':
-		item.delete()
-		return redirect('/')
-
-	context = {'item':item}
-	return render(request, 'tool/delete.html', context)
+def delete_event(request,event_id):
+    task =  Task.objects.get(pk=event_id)
+    task.delete()
+    return redirect('/')

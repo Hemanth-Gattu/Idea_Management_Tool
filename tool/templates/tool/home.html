@@ -24,11 +24,16 @@
     <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
     <script src="./dist/stackedCards.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
+
     <title>Idea Management Tool</title>
 
     <style>
         body {
             background-color: rgb(208, 231, 231);
+
         }
 
         .banner-image {
@@ -65,9 +70,6 @@
             padding-bottom: 20px;
         }
 
-        .w3-btn {
-            width: 150px;
-        }
 
 
         /*1st choice */
@@ -76,7 +78,7 @@
         }
 
         .card-big-shadow {
-            max-width: 320px;
+            max-width: auto;
             position: relative;
         }
 
@@ -224,13 +226,12 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{% url 'home' %}" style="padding-left: 25px;">Add
-                                Note</a>
+                            <a class="nav-link text-white" href="{% url 'home' %}" style="padding-left: 25px; font-family: 'Alef';"><strong>Add Note</strong></a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#contact-section"
-                                style="padding-left: 25px; padding-right: 30px;">Contact Us</a>
+                                style="padding-left: 25px;font-family: 'Alef'; padding-right: 30px;"><strong>Contact Us</strong> </a>
                         </li>
 
                         <li class="nav-item">
@@ -238,7 +239,7 @@
                                 <form class="d-flex">
                                     <input class="form-control me-2" name="q" type="search" placeholder="Search"
                                         aria-label="Search">
-                                    <button class="btn btn-outline-dark" type="submit">Search</button>
+                                    <button class="btn btn-outline-dark" style="font-family: 'Alef';" type="submit"><strong>Search</strong></button>
                                 </form>
                             </div>
                         </li>
@@ -253,13 +254,14 @@
     <br>
     <br>
 
-    <!--Adding Section-->
+    <!--Adding Section -->
 
-        <div style="padding-left:65px;padding-right: 65px;">
-            <section id="upload-section">
+
+    <div style="padding-left:65px;padding-right: 65px;">
+        <section id="upload-section">
 
             <div class="w3-card-4"
-                style="width: 35rem; background-color: rgb(246, 249, 250);background-color:rgb(229, 236, 236);">
+                style="width: auto; background-color: rgb(246, 249, 250);background-color:rgb(229, 236, 236); border-radius: 30px;">
                 <br>
                 <br>
                 <div class="container h-100">
@@ -277,38 +279,31 @@
             </div>
         </section>
 
-        </div>
-
-    <br>
-    <br>
-
-    <!-- Sorting Section-->
-
-    <div style="padding-left:65px;padding-right: 65px;">
-
-        <div class="w3-card-4" style="width: 50rem;">
-
-            <div class="container bootstrap snippets bootdeys" style="padding-top: 17px;padding-bottom: 20px;">
-
-                <h4>Sort according to buckets..!</h4>
-                <br>
-                <form class="d-flex">
-
-                    {% for task in tasks %}
-                    {% if task.bucket != NULL %}
-                    <!--  <input name="q" type="radio" value="{{ task.bucket }}"/>{{ task.bucket }}-->
-                    <button class="w3-button w3-black w3-round-xlarge" name="q" type="submit" value="{{ task.bucket }}">
-                        {{ task.bucket }}</button>
-
-                    {% endif %}
-                    {% endfor %}
-
-                    <!--<input value="search" type="submit"/> -->
-                </form>
-            </div>
-        </div>
     </div>
+
     <br>
+    <br>
+
+    <!--Sorting Section-->
+    <div style="padding-left:65px;padding-right: 65px;">
+        <div class="w3-card-4" style="padding-left:10px;padding-bottom: 10px; border-radius: 30px;">
+            <center>
+                <h4 style="padding: 13px;font-family: 'Alef';">Sort according to buckets..!</h4>
+            </center>
+            <form>
+                <div class="w3-container row" style="margin-top:10px;"></div>
+
+                {% for task in tasks %}
+                {% if task.bucket != NULL %}
+                <button class="w3-button w3-black w3-round-xlarge" style="width: auto; margin-bottom: 10px;" name="q"
+                    type="submit" value="{{ task.bucket }}" href="#note-section">
+                    {{ task.bucket }}</button>
+                {% endif %}
+                {% endfor %}
+        </div>
+        </form>
+    </div>
+    </div>
     <!-- Notes Section -->
     <section id="note-section">
         <div class="container bootstrap snippets bootdeys">
@@ -316,7 +311,7 @@
                 {% for task in tasks %}
                 {% if task.bucket != NULL %}
 
-                <div class="col-md-4 col-sm-6 content-card">
+                <div class="col-md-4 col-sm-6 content-card w3-center" style="padding:30px">
                     <div class="card-big-shadow">
                         <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
                             <div class="content">
@@ -330,7 +325,8 @@
                                 <h4 class="title"><a href="#note-section">{{ task.title }}</a></h4>
                                 <p class="description">{{ task.content }}</p>
                                 <a class="btn btn-sm btn-info" href="{% url 'update_task' task.id %}">Update</a>
-                                <a class="btn btn-sm btn-danger" href="{% url 'delete' task.id %}">Delete</a>
+                                <a class="btn btn-sm btn-danger" href="{% url 'delete_event' task.id %}">Delete</a>
+
                             </div>
                         </div>
                     </div>
@@ -341,7 +337,7 @@
                 {% for task in tasks %}
                 {% if task.bucket == NULL %}
 
-                <div class="col-md-4 col-sm-6 content-card">
+                <div class="col-md-4 col-sm-6 content-card  w3-center" style="padding:30px">
                     <div class="card-big-shadow">
                         <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
                             <div class="content">
@@ -351,7 +347,7 @@
                                 <h4 class="title"><a href="#">{{ task.title }}</a></h4>
                                 <p class="description">{{ task.content }}</p>
                                 <a class="btn btn-sm btn-info" href="{% url 'update_task' task.id %}">Update</a>
-                                <a class="btn btn-sm btn-danger" href="{% url 'delete' task.id %}">Delete</a>
+                                <a class="btn btn-sm btn-danger" href="{% url 'delete_event' task.id %}">Delete</a>
                             </div>
                         </div>
                     </div>
@@ -366,25 +362,25 @@
     <!-- Contact Section -->
     <section id="contact-section" style="width: 100%; padding-top: 35px;">
         <div class="contact">
-            <h class="contacttext contactus"><strong>Contact Me</strong></h4>
-                <br>
-                <p class="contacttext">Email : hemanth.3@iitj.ac.in</p>
-                <p class="contacttext">Contact Number : +919352060280</p>
-                <p class="contacttext">IIT Jodhpur</p>
-                <!--<p> "If you have any suggestions or requirements you are always invited to contact us by email or whatsapp and we will
+            <h4 class="contacttext contactus"><strong>Contact Me</strong></h4>
+            <p class="contacttext">Email : hemanth.3@iitj.ac.in</p>
+            <p class="contacttext">Contact Number : +919352060280</p>
+            <p class="contacttext">IIT Jodhpur</p>
+            <!--<p> "If you have any suggestions or requirements you are always invited to contact us by email or whatsapp and we will
        be sure to get back to you as soon as possible"</p>-->
 
 
-                <a href="https://github.com/Hemanth-Gattu"><i class="fa fa-github"
-                        style="font-size:36px; color:rgb(248, 247, 247)"></i></a>
-                <a href="https://www.linkedin.com/in/hemanth-gattu-112373196/"><i class="fa fa-linkedin-square"
-                        style="font-size:36px;color:white;padding-left:25px;"></i>
-                </a>
-                <a href="https://www.instagram.com/hemanth_gattu/"><i class="fa fa-instagram"
-                        style="font-size:36px;color:white;padding-left:25px;"></i>
-                </a>
+            <a href="https://github.com/Hemanth-Gattu"><i class="fa fa-github"
+                    style="font-size:36px; color:rgb(248, 247, 247)"></i></a>
+            <a href="https://www.linkedin.com/in/hemanth-gattu-112373196/"><i class="fa fa-linkedin-square"
+                    style="font-size:36px;color:white;padding-left:25px;"></i>
+            </a>
+            <a href="https://www.instagram.com/hemanth_gattu/"><i class="fa fa-instagram"
+                    style="font-size:36px;color:white;padding-left:25px;"></i>
+            </a>
 
     </section>
+
     <script src="{% static 'bootstrap.bundle.min.js' %}"></script>
     <script type="text/javascript">
         var nav = document.querySelector('nav');

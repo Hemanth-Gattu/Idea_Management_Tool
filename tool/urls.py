@@ -24,6 +24,5 @@ urlpatterns = [
     #path('admin/', admin.site.urls),
     path('',views.home,name="home"),
     path('update_task/<str:pk>/', views.updateTask, name="update_task"),
-	path('delete/<str:pk>/', views.deleteTask, name="delete"),
-
+    path('delete_event/<event_id>',views.delete_event,name='delete_event'),
 ]
