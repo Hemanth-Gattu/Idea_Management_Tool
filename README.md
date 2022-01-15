@@ -54,6 +54,7 @@ cd Idea_Management_Tool/
 
 ```
 python manage.py makemigrations
+
 python manage.py migrate
 ```
 
