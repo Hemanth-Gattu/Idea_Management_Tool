@@ -14,8 +14,7 @@ Requirements:
 
 - Other dependencies in `requirements_personal.txt`
 
-Procedure:
-
+To Setup the repo locally:
 
 Follow these steps:
 
@@ -23,15 +22,12 @@ Follow these steps:
 git clone https://github.com/Hemanth-Gattu/Production_House_Management.git
 ```
 
-
-Setup Locally:
-
 Make sure you have python 3 and pipenv installed on your pc.
 
 Then follow these steps:
 
 ```
-cd <project-directory>/backend/
+cd <project-directory>
 
 cp .env.example .env
 
